@@ -18,16 +18,31 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Check GitHub Pages
+        id: check
+        run: |
+          code=$(curl -s -o /dev/null -w "%{http_code}" \
+            -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+            -H "Accept: application/vnd.github+json" \
+            "https://api.github.com/repos/${{ github.repository }}/pages")
+          if [ "$code" = "200" ]; then
+            echo "enabled=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "enabled=false" >> "$GITHUB_OUTPUT"
+            echo "::notice title=GitHub Pages inactif::Activez Pages dans Settings > Pages > Source : GitHub Actions, puis relancez ce workflow."
+          fi
       - uses: actions/configure-pages@v5
-        with:
-          enablement: true
+        if: steps.check.outputs.enabled == 'true'
       - name: Stage site
+        if: steps.check.outputs.enabled == 'true'
         run: |
           mkdir -p _site
           cp index.html style.css app.js _site/
           cp -r assets _site/assets
       - uses: actions/upload-pages-artifact@v3
+        if: steps.check.outputs.enabled == 'true'
         with:
           path: _site
       - id: deployment
+        if: steps.check.outputs.enabled == 'true'
         uses: actions/deploy-pages@v4
