@@ -4,6 +4,15 @@ Site éditorial statique consacré à trois œuvres : *Guerre des gangs à Okina
 (cinéma), *Kafka sur le rivage* (littérature) et *Crows: The Battle Action*
 (rétro-gaming).
 
+## Dépôt GitHub
+
+- Code : <https://github.com/LE-FLAW/archives-culturelles>
+- Site en ligne : <https://le-flaw.github.io/archives-culturelles/> *(après activation de Pages)*
+
+Le workflow `.github/workflows/deploy-pages.yml` publie automatiquement le site à
+chaque push sur `main`. Pour l'activer une seule fois : **Settings → Pages →
+Source : GitHub Actions**, puis relancer le workflow.
+
 ## Lancer le site
 
 Deux possibilités :
