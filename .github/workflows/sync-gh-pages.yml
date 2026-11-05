@@ -1,0 +1,40 @@
+name: Sync gh-pages
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: gh-pages
+  cancel-in-progress: true
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check Pages configuration
+        id: check
+        run: |
+          info=$(curl -s -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" -H "Accept: application/vnd.github+json" "https://api.github.com/repos/${{ github.repository }}/pages")
+          build_type=$(echo "$info" | jq -r '.build_type // empty')
+          echo "build_type=$build_type"
+          if [ "$build_type" = "legacy" ]; then
+            echo "sync=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "sync=false" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Publish to gh-pages
+        if: steps.check.outputs.sync == 'true'
+        run: |
+          mkdir -p _site
+          cp index.html style.css app.js _site/
+          cp -r assets _site/assets
+          cd _site
+          git init -q
+          git checkout -q -b gh-pages
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -q -m "Publication du site"
+          git push -f "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" gh-pages
