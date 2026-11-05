@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Archives — Mémoires de culture pop</title>
+  <meta name="description" content="Archives documentaires consacrées au cinéma, à la littérature et au rétro-gaming : fiches analytiques, galeries et notes de sources.">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#08090a">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%2308090a'/%3E%3Crect x='8' y='8' width='48' height='48' fill='none' stroke='%23c6a05e' stroke-width='1.5'/%3E%3Ctext x='32' y='43' font-family='serif' font-size='28' fill='%23c6a05e' text-anchor='middle'%3E%E8%A8%98%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <a class="skip" href="#main">Aller au contenu</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#/" aria-label="Archives — accueil">
+        <span class="brand-mark">記</span>
+        <span>
+          <span class="brand-word">Archives</span>
+          <span class="brand-sub">Mémoires de culture pop</span>
+        </span>
+      </a>
+
+      <nav class="nav" aria-label="Navigation principale">
+        <a href="#/" data-nav="home">Collection</a>
+        <a href="#/galerie" data-nav="gallery">Galerie</a>
+        <a href="#/" data-nav="favs">
+          Favoris<span class="nav-count" id="navFavCount" hidden>0</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- =================================================================
+         ACCUEIL
+         ================================================================= -->
+    <div id="view-home" class="view">
+
+      <section class="hero">
+        <div class="wrap hero-inner">
+          <div>
+            <div class="hero-kicker">
+              <span class="line"></span>
+              <span>Collection documentaire · 01 — 03</span>
+            </div>
+
+            <h1>Mémoires de <em>culture pop</em></h1>
+
+            <p class="hero-lede">
+              Trois œuvres, trois régimes d’images : un film de yakuza filmé en 1971 sur une île
+              encore américaine, un roman de Haruki Murakami hanté par Œdipe, et un beat’em up
+              japonais oublié sur une Saturn en fin de vie. <strong>Des fiches analytiques, des
+              documents, des sources.</strong>
+            </p>
+
+            <div class="hero-meta">
+              <div>Œuvres<b>03</b></div>
+              <div>Domaines<b>Cinéma · Littérature · Rétro-gaming</b></div>
+              <div>Documents<b>09 emplacements</b></div>
+            </div>
+          </div>
+
+          <div class="hero-jp" aria-hidden="true">文化の記憶</div>
+        </div>
+      </section>
+
+      <div class="toolbar">
+        <div class="wrap toolbar-inner">
+          <div class="search" role="search">
+            <span class="search-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                <circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/>
+              </svg>
+            </span>
+            <label class="skip" for="search">Rechercher dans la collection</label>
+            <input id="search" type="search" autocomplete="off" spellcheck="false"
+                   placeholder="Rechercher une œuvre, un auteur, une année…">
+            <button class="search-clear" id="searchClear" type="button" aria-label="Effacer la recherche">×</button>
+          </div>
+
+          <div class="filters" id="filters" role="group" aria-label="Filtrer par catégorie"></div>
+        </div>
+      </div>
+
+      <section class="collection wrap" aria-labelledby="collection-title">
+        <div class="section-head">
+          <h2 id="collection-title">La collection</h2>
+          <span class="count" id="resultCount">3 œuvres</span>
+        </div>
+
+        <div class="cards" id="cards"></div>
+
+        <div class="empty" id="empty" hidden></div>
+      </section>
+
+      <section class="gallery-strip wrap" aria-labelledby="strip-title">
+        <div class="strip-head">
+          <h2 id="strip-title">Galerie documentaire</h2>
+          <a class="link-mono" href="#/galerie">Voir les 9 documents</a>
+        </div>
+        <div class="strip-grid" id="stripGrid"></div>
+      </section>
+
+    </div>
+
+    <!-- =================================================================
+         FICHE (générée)
+         ================================================================= -->
+    <section id="view-work" class="view" hidden>
+      <div class="wrap work" id="workContent"></div>
+    </section>
+
+    <!-- =================================================================
+         GALERIE DOCUMENTAIRE
+         ================================================================= -->
+    <section id="view-gallery" class="view" hidden>
+      <div class="wrap doc-gallery">
+        <div class="work-topbar">
+          <a class="back-link" href="#/"><span>←</span>Retour à la collection</a>
+          <span class="eyebrow">Fonds iconographique</span>
+        </div>
+
+        <div class="hero-kicker" style="margin-top:34px">
+          <span class="line"></span>
+          <span>Documents conservés localement</span>
+        </div>
+        <h1 class="work-title" style="margin-bottom:14px">Galerie documentaire</h1>
+        <p class="work-summary" style="margin-top:0;margin-bottom:38px">
+          Neuf emplacements, alimentés par les fichiers déposés dans <code>/assets</code>.
+          Les documents absents restent signalés comme tels : aucune reproduction n’est fabriquée.
+        </p>
+
+        <div class="doc-grid" id="docGallery"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <span class="footer-brand">Archives — Mémoires de culture pop</span>
+      <p class="footer-note">
+        Base documentaire personnelle. Les fiches distinguent les faits sourcés des
+        interprétations. Images conservées localement ; les emplacements vides signalent
+        un document manquant, jamais une reconstitution.
+      </p>
+    </div>
+  </footer>
+
+  <!-- ===================================================================
+       VISIONNEUSE PLEIN ÉCRAN
+       =================================================================== -->
+  <div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Visionneuse documentaire">
+    <div class="lb-top">
+      <span class="lb-count" id="lbCount">01 / 01</span>
+      <div class="lb-top-actions">
+        <a class="btn-ghost" id="lbReturn" href="#/">Retour à la fiche</a>
+        <button class="btn-ghost" id="lbClose" type="button" aria-label="Fermer la visionneuse">Fermer ×</button>
+      </div>
+    </div>
+
+    <div class="lb-stage" id="lbStage">
+      <div class="lb-media" id="lbMedia"></div>
+      <button class="lb-nav lb-prev" id="lbPrev" type="button" aria-label="Document précédent">‹</button>
+      <button class="lb-nav lb-next" id="lbNext" type="button" aria-label="Document suivant">›</button>
+    </div>
+
+    <div class="lb-bottom">
+      <div class="lb-caption">
+        <p class="lb-title" id="lbTitle"></p>
+        <p class="lb-meta" id="lbMeta"></p>
+        <p class="lb-warning" id="lbWarning" hidden></p>
+      </div>
+      <span class="eyebrow">Échap pour fermer · ← → pour naviguer</span>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <noscript>
+    <p style="padding:24px;font-family:monospace">
+      Ce site nécessite JavaScript pour la recherche, les filtres et les galeries.
+    </p>
+  </noscript>
+
+  <script src="app.js"></script>
+</body>
+</html>
