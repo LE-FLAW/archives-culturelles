@@ -9,7 +9,7 @@ manquant » s'affiche à sa place, avec le nom de fichier attendu.
 | Fichier | Contenu | État |
 |---|---|---|
 | `okinawa-affiche.png` | Affiche japonaise originale — *Guerre des gangs à Okinawa* | présent |
-| `okinawa-galerie.png` | Planche promotionnelle / photographie du film | `okinawa-galerie.webp` présent (même document, extension réelle) |
+| `okinawa-galerie.png` | Capture d'écran — deux plans du film (© Tōei, 1971) | présent |
 | `kafka-couverture-fr.png` | Couverture de l'édition française (Belfond, 2006) | manquant |
 | `kafka-galerie.png` | Édition japonaise | manquant |
 | `kafka-librairie.png` | Photographie de librairie (optionnel) | manquant |

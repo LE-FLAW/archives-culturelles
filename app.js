@@ -43,9 +43,9 @@ const IMAGES = {
   okinawaGalerie: {
     id: 'okinawaGalerie',
     files: asset('okinawa-galerie'),
-    title: 'Édition vidéo française',
-    caption: 'Photographie de l’édition DVD française, collection « Les Introuvables » (Warner / Tōei).',
-    credit: 'Photographie de l’objet, non un photogramme du film.'
+    title: 'Photogrammes du film',
+    caption: 'Deux plans de Guerre des gangs à Okinawa — capture d’écran fournie par le lecteur (© Tōei, 1971).',
+    credit: 'Capture d’écran de deux plans du film, non un document d’édition.'
   },
   kafkaFr: {
     id: 'kafkaFr',
@@ -332,7 +332,7 @@ const WORKS = [
             'Wikipédia (ja), fiche de Kinji Fukasaku et filmographie Tōei.',
             'Base de données IMDb / TMDb : fiche technique et distribution.',
             'Sancho Asia : notice de présentation du film.',
-            'Édition vidéo française, collection « Les Introuvables » (document photographié dans la galerie).'
+            'Édition vidéo française, collection « Les Introuvables ».'
           ] },
           { p: '<em>Les dates, la durée et l’équipe technique sont recoupées sur la fiche Wikipédia ; les interprétations esthétiques relèvent de l’analyse et sont signalées comme telles.</em>' }
         ]
