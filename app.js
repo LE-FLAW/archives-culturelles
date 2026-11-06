@@ -52,29 +52,27 @@ const IMAGES = {
     files: asset('kafka-couverture-fr'),
     title: 'Couverture de l’édition française',
     caption: 'Couverture de l’édition française — Belfond, 2006, traduction Corinne Atlan.',
-    credit: 'Document : couverture éditeur.',
-    portrait: true
+    credit: 'Capture d’écran fournie par le lecteur ; document : couverture éditeur.'
   },
   kafkaJp: {
     id: 'kafkaJp',
     files: asset('kafka-galerie'),
     title: 'Édition japonaise',
-    caption: 'Édition japonaise de Umibe no Kafuka (2002).',
-    credit: 'Document : édition originale.',
-    portrait: true
+    caption: 'Photographie de l’édition japonaise — Umibe no Kafuka, volume 1 (2002).',
+    credit: 'Photographie documentaire ; document : édition originale.'
   },
   kafkaLibrairie: {
     id: 'kafkaLibrairie',
     files: asset('kafka-librairie'),
-    title: 'Photographie de librairie',
-    caption: 'Le roman en rayon : photographie de librairie.',
-    credit: 'Photographie documentaire.'
+    title: 'Bibliothèque japonaise',
+    caption: 'Intérieur d’une bibliothèque au Japon — décorations marines suspendues au plafond.',
+    credit: 'Photographie documentaire, sans lien de production avec l’œuvre.'
   },
   kafkaForet: {
     id: 'kafkaForet',
     files: asset('kafka-foret'),
-    title: 'Photographie de forêt',
-    caption: 'Sous-bois et lumière filtrée : le motif forestier du roman.',
+    title: 'Forêt et lanternes',
+    caption: 'Chemin forestier bordé de lanternes de pierre — le motif du bois sacré.',
     credit: 'Photographie documentaire, sans lien de production avec l’œuvre.'
   },
   crowsManga: {
